@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-wrapper {
+  max-width: 1440px;  
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "h h"
+  "n c"
+  "n f";
+  grid-template-rows: 60px 1fr 40px;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
   min-height: 100vh;
+}
+
+.header {
+  grid-area: h;
+  background-color: aqua;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.header img {
+  max-width: 40px;
+  padding-left: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+  grid-area: n;
+  background-color: bisque;
+  padding: 15px 0px 0px 15px;
+}
+
+.content {
+  grid-area: c;
+  background-color: rgb(207, 207, 207);
+  padding: 15px;
+}
+
+.content .profileBackground {
+  width: 100%;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+.content .profileAvatar {
+  width: 150px;  
+}
+
+.userProfile {
+  display: flex;
+  align-items: flex-start;
+  justify-content:flex-start;
+  padding: 15px 0px;
+}
+
+.footerDark {
+  grid-area: f;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footerText {
+  padding: 0px 15px;
 }
