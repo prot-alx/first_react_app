@@ -1,0 +1,11 @@
+.footerDark {
+    grid-area: f;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .footerText {
+    padding: 0px 15px;
+  }
