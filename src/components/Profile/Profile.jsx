@@ -1,7 +1,8 @@
 import React from "react";
-import profileBackground from '../img/background.jpg';
-import avatarImage from '../img/avatar.jpg';
+import profileBackground from '../../img/background.jpg';
+import avatarImage from '../../img/avatar.jpg';
 import classes from './Profile.module.css';
+import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
@@ -17,7 +18,7 @@ const Profile = () => {
                     </div>
                     <div className={classes.profileStatus}>
                         <ul>
-                            <li >дата</li>
+                            <li>дата</li>
                             <li>город</li>
                             <li>образование</li>
                             <li>веб сайт</li>
@@ -25,23 +26,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                Myposts
-            </div>
-            <div>
-                new post
-            </div>
-            <div>
-                <div className={classes.item}>
-                    post1
-                </div>
-                <div className={classes.item}>
-                    post2
-                </div>
-                <div className={classes.item}>
-                    post3
-                </div>
-            </div>            
+           <MyPosts /> 
         </div> 
     )
 }
