@@ -6,7 +6,7 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={classes.content}>
+        <div>
             <div>
                 <img className={classes.profileBackground} src={profileBackground} alt="background"/>
             </div>
