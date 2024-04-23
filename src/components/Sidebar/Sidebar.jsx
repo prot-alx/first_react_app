@@ -10,7 +10,7 @@ const Sidebar = () => {
         <NavLink to='/profile' className = { activeLinkCheck }>Profile</NavLink>
       </div>
       <div>
-        <NavLink to='/messages' className = { activeLinkCheck }>Messages</NavLink>
+        <NavLink to='/dialogs' className = { activeLinkCheck }>Messages</NavLink>
       </div>
       <div>
         <NavLink to='/music' className = { activeLinkCheck }>Music</NavLink>

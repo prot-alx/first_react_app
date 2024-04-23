@@ -19,9 +19,9 @@ const App = () => {
         <Sidebar />
         <div class='app-wrapper-content'>
           <Routes>
-            <Route path='/' exact={true} element={<Profile />} />
+            <Route path='/*' element={<Profile />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/messages' element={<Dialogs />} />
+            <Route path='/dialogs/*' element={<Dialogs />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />
