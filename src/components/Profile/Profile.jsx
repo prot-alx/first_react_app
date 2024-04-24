@@ -1,32 +1,13 @@
 import React from "react";
-import profileBackground from '../../img/background.jpg';
-import avatarImage from '../../img/avatar.jpg';
-import classes from './Profile.module.css';
+//import classes from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
         <div>
-            <div>
-                <img className={classes.profileBackground} src={profileBackground} alt="background"/>
-            </div>
-            <div className={classes.userProfile}>
-                <img className={classes.profileAvatar} src={avatarImage} alt="avatar"/>
-                <div>
-                    <div className={classes.profileName}>
-                        <h3>Name</h3>
-                    </div>
-                    <div className={classes.profileStatus}>
-                        <ul>
-                            <li>дата</li>
-                            <li>город</li>
-                            <li>образование</li>
-                            <li>веб сайт</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-           <MyPosts /> 
+            <ProfileInfo />            
+            <MyPosts /> 
         </div> 
     )
 }
