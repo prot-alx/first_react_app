@@ -9,7 +9,7 @@ import Help from './components/Help/Help';
 import Music from './components/Music/Music';
 import Options from './components/Options/Options';
 import './App.css';
-
+import { postsData, messagesData, dialogsData } from "./incData";
 
 const App = () => {
   return (
@@ -20,8 +20,8 @@ const App = () => {
         <div class='app-wrapper-content'>
           <Routes>
             <Route path='/*' element={<Profile />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/dialogs/*' element={<Dialogs />} />
+            <Route path='/profile' element={<Profile postsData={postsData}/>} />
+            <Route path='/dialogs/*' element={<Dialogs messagesData={messagesData} dialogsData={dialogsData}/>} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />

@@ -2,8 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from './Sidebar.module.css';
 
-const activeLinkCheck = (navData) => navData.isActive ? classes.active : classes.inactive;
+
 const Sidebar = () => {
+  const activeLinkCheck = (navData) => navData.isActive ? classes.active : classes.inactive;
   return (
     <nav className={classes.nav}>
       <div>
