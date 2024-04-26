@@ -40,21 +40,17 @@ const Dialogs = () => {
         { id: 5, message: '&&&^^^^!!!!222' }
     ];
 
+    let dialogsItems = dialogsData.map(dialogCompanion => <DialogItem name={dialogCompanion.name} id={dialogCompanion.id}/>);
+
+    let messageItems = messagesData.map(lastMessage => <Message message={lastMessage.message}/>);
+
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <DialogItem {...dialogsData[1]}/>
-                <DialogItem name='Olga' id='3'/>
-                <DialogItem name='Timur' id='4'/>
-                <DialogItem name='Kirill' id='5'/>                
+                {dialogsItems}               
             </div>
             <div className={classes.messages}>
-                <Message message={messagesData[0].message}/>
-                <Message {...messagesData[1]}/>
-                <Message message='2342356'/>
-                <Message message='!!!!!223213'/>
-                <Message message='&&&^^^^!!!!222'/>
+                {messageItems}
             </div>
         </div>
     );
