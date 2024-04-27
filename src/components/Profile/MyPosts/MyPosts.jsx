@@ -3,9 +3,9 @@ import classes from './MyPosts.module.css';
 import Post from '../MyPosts/Post/Post';
 //import { postsData } from '../../../incData';
 
-const MyPosts = ({postsData}) => {
+const MyPosts = (props) => {
 
-    let postsElements = postsData.map(post => <Post message={post.message} likesCount={post.likesCount}/>);
+    let postsElements = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount}/>);
 
     return (        
         <div className={classes.postBlock}>

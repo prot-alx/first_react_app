@@ -9,9 +9,9 @@ import Help from './components/Help/Help';
 import Music from './components/Music/Music';
 import Options from './components/Options/Options';
 import './App.css';
-import { postsData, messagesData, dialogsData } from "./incData";
 
-const App = () => {
+
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -20,8 +20,8 @@ const App = () => {
         <div class='app-wrapper-content'>
           <Routes>
             <Route path='/*' element={<Profile />} />
-            <Route path='/profile' element={<Profile postsData={postsData}/>} />
-            <Route path='/dialogs/*' element={<Dialogs messagesData={messagesData} dialogsData={dialogsData}/>} />
+            <Route path='/profile' element={<Profile postsData={props.postsData}/>} />
+            <Route path='/dialogs/*' element={<Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />
