@@ -12,22 +12,20 @@ const ProfileInfo = () => {
             </div>
 
             <div className={classes.userProfile}>
+                 <div className={classes.profileName}>
+                    <h3>Name</h3>         
+                </div>                
                 <div>
-                    <div>
-                        <img className={classes.profileAvatar} src={avatarImage} alt="avatar" />
-                    </div>
-                    <div className={classes.profileName}>
-                        <h3>Name</h3>
-                    </div>
-                    <div className={classes.profileStatus}>
-                        <ul>
-                            <li>дата</li>
-                            <li>город</li>
-                            <li>образование</li>
-                            <li>веб сайт</li>
-                        </ul>
-                    </div>
-                </div>
+                    <img className={classes.profileAvatar} src={avatarImage} alt="avatar" />
+                </div>                
+                <div className={classes.profileInfo}>
+                    <ul>
+                        <li>дата</li>
+                        <li>город</li>
+                        <li>образование</li>
+                        <li>веб сайт</li>
+                    </ul>
+                </div>                
             </div>
         </div>
     )

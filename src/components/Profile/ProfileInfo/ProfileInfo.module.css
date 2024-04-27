@@ -4,13 +4,24 @@
   max-height: 250px;
 }
 
-.profileAvatar {
-  max-width: 150px;  
+.userProfile {
+  display: grid;
+  grid-template-areas: 
+  "name name"
+  "avatar info"  ;
+  padding: 20px 0px;
+  max-width: 300px;
 }
 
-.userProfile {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 40px 0px;
+.profileAvatar {
+  max-width: 150px;
+  grid-area: avatar;  
+}
+
+.profileName {
+  grid-area: name;
+}
+
+.profileInfo {
+  grid-area: info;
 }
