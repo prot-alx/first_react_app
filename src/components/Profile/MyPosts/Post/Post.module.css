@@ -1,9 +1,36 @@
 .item {
-  margin-bottom: 10px;
   color: rgb(78, 129, 0);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 0px;
 }
 
 .item img {
   width: 50px;
   border-radius: 50%;
+  display: block;
+}
+
+.text {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 40%;
+  padding: 5px;
+  border: 1px solid rgb(78, 129, 0);
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+  color: rgb(78, 129, 0);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  word-wrap: break-word;
+}
+
+
+.likes {
+  color: rgb(78, 129, 0);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
