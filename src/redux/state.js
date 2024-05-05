@@ -9,7 +9,7 @@ let state = {
             { id: 4, message: '!!!!!223213', likesCount: 2, }, 
             { id: 5, message: '&&&^^^^!!!!222', likesCount: 5, }
         ],
-        newPostText: ''  
+        newPostText: 'a'  
     },
     
     dialogsPage: {
@@ -58,7 +58,7 @@ export let addMessage = () => {
 
 export let updateNewMessageText = (newMessage) => {
     state.dialogsPage.newMessageText = newMessage;
-    rerenderEntireTree(state);
+    rerenderEntireTree(state);    
 }
 
 export default state;
