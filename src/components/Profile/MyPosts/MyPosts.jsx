@@ -9,7 +9,7 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.newPostText === '' ? alert('Enter text') : props.addPost();          
+        props.newPostText === '' ? alert('Enter some text') : props.addPost();          
         //props.addPost(text);      
         props.updateNewPostText('');
     };

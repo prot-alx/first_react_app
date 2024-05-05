@@ -8,11 +8,19 @@ const Dialogs = (props) => {
     let dialogsItems = props.state.dialogsData.map(dialogCompanion => <DialogItem name={dialogCompanion.name} id={dialogCompanion.id}/>);
 
     let messageItems = props.state.messagesData.map(lastMessage => <Message message={lastMessage.message}/>);
+    
     let newMessageElement = React.createRef();
+
     let sendMessage = () => {
+        props.state.newMessageText === '' ? alert('Enter some text') : props.addMessage();
+        //props.addMessage();
+        props.updateNewMessageText('');
+    }
+
+    let onMessageChange = () => {
         let text = newMessageElement.current.value;
-        alert(text);
-     }
+        props.updateNewMessageText(text);
+    }
 
     return (
         <div className={classes.dialogsWrapper}>
@@ -25,7 +33,7 @@ const Dialogs = (props) => {
                 </div>            
             </div>
             <div className={classes.sendMessage}>
-                <textarea ref={newMessageElement}></textarea>
+                <textarea ref={newMessageElement} onChange={onMessageChange} value={props.state.newMessageText} />
                 <button onClick={sendMessage}>Send</button>
             </div>
         </div>

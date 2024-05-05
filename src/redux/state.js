@@ -9,7 +9,7 @@ let state = {
             { id: 4, message: '!!!!!223213', likesCount: 2, }, 
             { id: 5, message: '&&&^^^^!!!!222', likesCount: 5, }
         ],
-        newPostText: 'it-text'  
+        newPostText: ''  
     },
     
     dialogsPage: {
@@ -28,6 +28,7 @@ let state = {
             { id: 4, message: '!!!!!223213' }, 
             { id: 5, message: '&&&^^^^!!!!222' }
         ],
+        newMessageText: ''
     },  
 }
 
@@ -43,6 +44,20 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 6,
+        message: state.dialogsPage.newMessageText
+    };
+    state.dialogsPage.messagesData.push(newMessage);
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newMessage) => {
+    state.dialogsPage.newMessageText = newMessage;
     rerenderEntireTree(state);
 }
 

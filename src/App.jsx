@@ -8,20 +8,20 @@ import Footer from './components/Footer/Footer';
 import Help from './components/Help/Help';
 import Music from './components/Music/Music';
 import Options from './components/Options/Options';
-import './App.css';
+import classes from './App.module.css';
 
 
 const App = (props) => {
   return (
     <BrowserRouter>
-      <div className='appWrapper'>
+      <div className={classes.appWrapper}>
         <Header />
         <Sidebar />
-        <div className='appWrapperContent'>
+        <div className={classes.appWrapperContent}>
           <Routes>
             <Route path='/*' element={<Profile addPost={props.addPost} profilePage={props.state.profilePage} updateNewPostText={props.updateNewPostText}/>} />
             <Route path='/profile' element={<Profile addPost={props.addPost} profilePage={props.state.profilePage} updateNewPostText={props.updateNewPostText}/>} />
-            <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage}/>} />
+            <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText}/>} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />
