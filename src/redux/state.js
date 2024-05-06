@@ -69,6 +69,8 @@ let store = {
         } else if (action.type ==='UPDATE-NEW-MESSAGE-TEXT') {
             this._state.dialogsPage.newMessageText = action.newMessage;
             this._callSubscriber(this._state);    
+        } else {
+            alert('wrong action type:', action.type);
         }
     }
 }
