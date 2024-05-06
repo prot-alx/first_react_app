@@ -12,7 +12,6 @@ import classes from './App.module.css';
 
 
 const App = (props) => {
-  debugger;
   return (
     <BrowserRouter>
       <div className={classes.appWrapper}>
@@ -20,9 +19,9 @@ const App = (props) => {
         <Sidebar />
         <div className={classes.appWrapperContent}>
           <Routes>
-            <Route path='/*' element={<Profile addPost={props.addPost} profilePage={props.state.profilePage} updateNewPostText={props.updateNewPostText}/>} />
-            <Route path='/profile' element={<Profile addPost={props.addPost} profilePage={props.state.profilePage} updateNewPostText={props.updateNewPostText}/>} />
-            <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText}/>} />
+            <Route path='/*' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
+            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
+            <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />

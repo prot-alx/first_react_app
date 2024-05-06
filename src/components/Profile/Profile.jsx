@@ -8,8 +8,7 @@ const Profile = (props) => {
         <Fragment>
             <ProfileInfo />            
             <MyPosts postsData={props.profilePage.postsData} 
-                     addPost={props.addPost} 
-                     updateNewPostText={props.updateNewPostText}
+                     dispatch={props.dispatch}
                      newPostText={props.profilePage.newPostText}/> 
         </Fragment> 
     )

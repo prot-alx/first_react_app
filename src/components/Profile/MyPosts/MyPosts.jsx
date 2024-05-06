@@ -11,13 +11,12 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.newPostText === '' ? alert('Enter some text') : props.addPost();             
-        props.updateNewPostText('');
+        props.newPostText === '' ? alert('Enter some text') : props.dispatch({type: 'ADD-POST'});             
     };
 
     let onPostChange = () => {    
         let text = newPostElement.current.value;
-        props.updateNewPostText(text)
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
     }
 
     return (
@@ -30,7 +29,7 @@ const MyPosts = (props) => {
                     </div>
                     <div>
                         <button onClick={addPost} >Send</button>
-                        <button onClick={()=>setModalIsOpen(true)}>ХУЙ</button>
+                        <button onClick={()=>setModalIsOpen(true)}>test</button>
                     </div>
                 </div>
                 <div className={classes.posts}>
