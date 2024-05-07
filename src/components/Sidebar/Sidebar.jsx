@@ -4,7 +4,9 @@ import classes from './Sidebar.module.css';
 
 
 const Sidebar = () => {
-  const activeLinkCheck = (navData) => navData.isActive ? classes.active : classes.inactive;
+  
+  let activeLinkCheck = (linkSelected) => linkSelected.isActive ? classes.active : classes.inactive;
+
   return (
     <nav className={classes.nav}>
       <div>

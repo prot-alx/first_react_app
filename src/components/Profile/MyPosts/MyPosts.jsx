@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
 import classes from './MyPosts.module.css';
 import Post from '../MyPosts/Post/Post';
-import {ModalWindow} from './ModalText';
+import { ModalWindow } from './ModalText';
+import { addPostActionCreator, updatePostActionCreator } from "../../../redux/state";
 
 const MyPosts = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -11,12 +12,13 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.newPostText === '' ? alert('Enter some text') : props.dispatch({type: 'ADD-POST'});             
+        props.newPostText === '' ? alert('Enter some text') : props.dispatch(addPostActionCreator());             
     };
 
     let onPostChange = () => {    
         let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
+        let action = updatePostActionCreator(text)
+        props.dispatch(action);
     }
 
     return (
