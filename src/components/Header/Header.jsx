@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../../img/logo.webp";
-import classes from './Header.module.css';
+import styles from './Header.module.css';
 
 const Header = () => {
     return (
-        <header className={classes.header}>
+        <header className={styles.header}>
             <img src={logo} alt="site-logo"/>
         </header>
     )

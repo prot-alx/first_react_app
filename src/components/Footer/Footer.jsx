@@ -1,10 +1,10 @@
 import React from "react";
-import classes from './Footer.module.css';
+import styles from './Footer.module.css';
 
 const Footer = () => {
     return (
-        <footer className={classes.footerDark}>
-            <div className={classes.footerText}>2024</div>
+        <footer className={styles.footerDark}>
+            <div className={styles.footerText}>2024</div>
         </footer>
     )
 }

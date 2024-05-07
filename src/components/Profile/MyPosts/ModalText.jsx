@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react"
-import classes from './ModalText.module.css';
+import styles from './ModalText.module.css';
 
 
 export const ModalWindow = ({setModalIsOpen, modalIsOpen}) => {
@@ -9,10 +9,10 @@ export const ModalWindow = ({setModalIsOpen, modalIsOpen}) => {
     return (
         <Fragment>
             <div
-                className={`${classes.overlay} ${modalIsOpen && classes.visible}`}
+                className={`${styles.overlay} ${modalIsOpen && styles.visible}`}
                 onClick={() => setModalIsOpen(false)}>
             </div>
-            <div className={`${classes.modal} ${modalIsOpen && classes.visible}`}>
+            <div className={`${styles.modal} ${modalIsOpen && styles.visible}`}>
                 <div onClick={() => setModalIsOpen(false)}>X</div>
                 <h2>Заказать обратный звонок</h2>
                 <form action="#">

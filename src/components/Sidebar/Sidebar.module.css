@@ -14,9 +14,11 @@
 }
 
 .inactive {
-    color: white;    
+    display: block;
+    color: white;
 }
 
-.active {   
+.active {
+    display: block;
     color: rgb(200, 250, 124);  
 }

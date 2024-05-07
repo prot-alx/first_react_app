@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './Dialogs.module.css';
+import styles from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from '../../../src/redux/state'
@@ -23,16 +23,16 @@ const Dialogs = (props) => {
     }
 
     return (
-        <div className={classes.dialogsWrapper}>
-            <div className={classes.dialogs}>
-                <div className={classes.dialogsItems}>
+        <div className={styles.dialogsWrapper}>
+            <div className={styles.dialogs}>
+                <div className={styles.dialogsItems}>
                     {dialogsItems}               
                 </div>
-                <div className={classes.messages}>
+                <div className={styles.messages}>
                     {messageItems}
                 </div>            
             </div>
-            <div className={classes.sendMessage}>
+            <div className={styles.sendMessage}>
                 <textarea ref={newMessageElement} onChange={onMessageChange} value={props.state.newMessageText} />
                 <button onClick={sendMessage}>Send</button>
             </div>

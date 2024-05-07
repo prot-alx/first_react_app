@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import classes from './MyPosts.module.css';
+import styles from './MyPosts.module.css';
 import Post from '../MyPosts/Post/Post';
 import { ModalWindow } from './ModalText';
 import { addPostActionCreator, updatePostActionCreator } from "../../../redux/state";
@@ -23,10 +23,10 @@ const MyPosts = (props) => {
 
     return (
         <Fragment>            
-            <div className={classes.postBlock}>
+            <div className={styles.postBlock}>
                 <h3>My posts</h3>
                 <div>
-                    <div className={classes.textWrapper}>
+                    <div className={styles.textWrapper}>
                         <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
                     </div>
                     <div>
@@ -34,7 +34,7 @@ const MyPosts = (props) => {
                         <button onClick={()=>setModalIsOpen(true)}>test</button>
                     </div>
                 </div>
-                <div className={classes.posts}>
+                <div className={styles.posts}>
                     {postsElements}
                 </div> 
             </div>

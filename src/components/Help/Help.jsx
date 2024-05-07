@@ -1,5 +1,5 @@
 import React from "react";
-//import classes from './Help.module.css';
+//import styles from './Help.module.css';
 
 const Help = (props) => {
     return (

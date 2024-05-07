@@ -1,17 +1,17 @@
 import React from "react";
-import classes from './Post.module.css';
+import styles from './Post.module.css';
 import ava from './imgPostAvatars/1.webp';
 
 const Post = (props) => {
     return (
         <div>
-            <div className={classes.item}>
+            <div className={styles.item}>
                 <img src={ava} alt="avatar"></img>
-                <div className={classes.text}>
+                <div className={styles.text}>
                     {props.message}
                 </div>
                 <div>
-                    <span className={classes.likes}>Likes: {props.likesCount}</span>
+                    <span className={styles.likes}>Likes: {props.likesCount}</span>
                 </div>
             </div>
         </div>
