@@ -2,9 +2,10 @@ import React, { Fragment, useState } from "react";
 import styles from './MyPosts.module.css';
 import Post from '../MyPosts/Post/Post';
 import { ModalWindow } from './ModalText';
-import { addPostActionCreator, updatePostActionCreator } from "../../../redux/state";
+import { addPostActionCreator, updatePostActionCreator } from '../../../redux/profileReducer';
 
 const MyPosts = (props) => {
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     let postsElements = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id}/>);
@@ -12,7 +13,7 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.newPostText === '' ? alert('Enter some text') : props.dispatch(addPostActionCreator());             
+        props.newPostText === '' ? alert('Enter some text') : props.dispatch(addPostActionCreator());         
     };
 
     let onPostChange = () => {    

@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-height: 100%;
+    justify-content: space-between;
 }
 
 .dialogs {
@@ -28,12 +30,10 @@
     gap: 25px;  
 }
 
-.sendMessage {
-    width: 600px;    
+.sendMessage {   
     display: flex;
     gap: 10px;
     flex-direction: column;
-    margin: auto;
 }
 
 .sendMessage textarea {
