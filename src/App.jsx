@@ -12,7 +12,6 @@ import styles from './App.module.css';
 
 
 const App = (props) => {
-  console.log(props);
   return (
     <BrowserRouter>
       <div className={styles.appWrapper}>
