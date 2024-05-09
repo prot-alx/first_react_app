@@ -5,10 +5,9 @@ import { ModalWindow } from './ModalText';
 import { addPostActionCreator, updatePostActionCreator } from '../../../redux/profileReducer';
 
 const MyPosts = (props) => {
-
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    let postsElements = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id}/>);
+    let postsElements = props.postsData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} id={post.id}/>);
 
     let newPostElement = React.createRef();
 

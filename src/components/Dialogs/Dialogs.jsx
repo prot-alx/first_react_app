@@ -5,10 +5,10 @@ import Message from "./Message/Message";
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from '../../../src/redux/dialogsReducer'
 
 const Dialogs = (props) => {
+    //console.log(props);
+    let dialogsItems = props.state.dialogsData.map(dialogItem => <DialogItem key={dialogItem.id} name={dialogItem.name} id={dialogItem.id}/>);
 
-    let dialogsItems = props.state.dialogsData.map(dialogCompanion => <DialogItem name={dialogCompanion.name} id={dialogCompanion.id}/>);
-
-    let messageItems = props.state.messagesData.map(lastMessage => <Message message={lastMessage.message}/>);
+    let messageItems = props.state.messagesData.map(messageItem => <Message key={messageItem.id} message={messageItem.message}/>);
     
     let newMessageElement = React.createRef();
 
