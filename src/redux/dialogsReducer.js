@@ -1,3 +1,5 @@
+import {v1} from 'uuid';
+
 const SEND_MESSAGE = 'SEND-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
@@ -24,7 +26,7 @@ const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
             let newMessage = {
-                id: 6,
+                id: v1(),
                 message: state.newMessageText
             };
             state.messagesData.push(newMessage);

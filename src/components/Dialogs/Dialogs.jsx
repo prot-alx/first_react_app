@@ -22,6 +22,8 @@ const Dialogs = (props) => {
         props.dispatch(action);
     }
 
+    let sendMsgOnEnter = (e) => {if (e.key === "Enter") sendMessage()};
+
     return (
         <div className={styles.dialogsWrapper}>
             <div className={styles.dialogs}>
@@ -33,7 +35,7 @@ const Dialogs = (props) => {
                 </div> 
             </div>
             <div className={styles.sendMessage}>
-                    <textarea ref={newMessageElement} onChange={onMessageChange} value={props.state.newMessageText} />
+                    <textarea ref={newMessageElement} onChange={onMessageChange} onKeyUp={sendMsgOnEnter} value={props.state.newMessageText} />
                     <button onClick={sendMessage}>Send</button>
             </div>
         </div>

@@ -1,3 +1,5 @@
+//import {v1} from 'uuid';
+
 let initialState = [ 
     {id: 1, menuName: 'Profile', menuAddress: '/profile'},
     {id: 2, menuName: 'Messages', menuAddress: '/messages'},

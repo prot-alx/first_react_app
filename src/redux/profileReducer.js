@@ -1,5 +1,9 @@
+import {v1} from 'uuid';
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'; 
+
+
 
 let initialState = {            
     postsData: [
@@ -16,7 +20,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
-                id: 6,
+                id: v1(),
                 message: state.newPostText,
                 likesCount: 0
             };
