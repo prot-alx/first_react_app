@@ -21,13 +21,15 @@ const MyPosts = (props) => {
         props.dispatch(action);
     }
 
+    let sendPostOnEnter = (e) => {if (e.key === "Enter") addPost()};
+
     return (
         <Fragment>            
             <div className={styles.postBlock}>
                 <h3>My posts</h3>
                 <div>
                     <div className={styles.textWrapper}>
-                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
+                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} onKeyUp={sendPostOnEnter}/>
                     </div>
                     <div>
                         <button onClick={addPost} >Send</button>
