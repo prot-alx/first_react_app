@@ -3,20 +3,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import StoreContext from './Store-Context';
+import {Provider} from './StoreContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {    
     root.render(
     <React.StrictMode>
-        <StoreContext.Provider value={store}>
+        <Provider store={store}>
             <App 
                 state={state}
                 dispatch={store.dispatch.bind(store)}
                 store={store}
             />
-        </StoreContext.Provider>
+        </Provider>
     </React.StrictMode>
     );
 }
