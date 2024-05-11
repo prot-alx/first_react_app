@@ -3,13 +3,11 @@ import React, { Fragment } from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = (props) => {
-    return (
+const Profile = () => {
+    return (        
         <Fragment>
             <ProfileInfo />            
-            <MyPosts postsData={props.profilePage.postsData} 
-                     dispatch={props.dispatch}
-                     newPostText={props.profilePage.newPostText}/> 
+            <MyPosts /> 
         </Fragment> 
     )
 }

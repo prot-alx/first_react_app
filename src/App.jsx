@@ -11,17 +11,17 @@ import Options from './components/Options/Options';
 import styles from './App.module.css';
 
 
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className={styles.appWrapper}>
         <Header />
-        <Sidebar sidebarList={props.state.sidebarList}/>
+        <Sidebar />
         <div className={styles.appWrapperContent}>
           <Routes>            
             <Route path='*' element={<Navigate replace to='/profile'/>}/>
-            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
-            <Route path='/messages/*' element={<Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/messages/*' element={<Dialogs />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />            
