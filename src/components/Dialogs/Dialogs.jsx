@@ -36,7 +36,7 @@ const Dialogs = () => {
                                     <div className={styles.dialogsItems}>
                                         {dialogsItems}
                                     </div>
-                                    <div className={styles.messages}>
+                                    <div className={styles.messageItems}>
                                         {messageItems}
                                     </div>
                                 </div>

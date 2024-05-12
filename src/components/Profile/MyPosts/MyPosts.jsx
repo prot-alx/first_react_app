@@ -17,17 +17,18 @@ const MyPosts = () => {
                 
                     let newPostElement = React.createRef();
                 
-                    let addPost = () => {
+                    let addPost = () => {                      
                         store.getState().newPostText === '' ? alert('Enter some text') : store.dispatch(addPostActionCreator());
                     };
-                
+
+                    let sendPostOnEnter = (e) => { if (e.key === "Enter") addPost() };
+                    
                     let onPostChange = () => {                        
                         let text = newPostElement.current.value;
                         let action = updatePostActionCreator(text)                        
                         store.dispatch(action);
                     }
-                
-                    let sendPostOnEnter = (e) => { if (e.key === "Enter") addPost() };
+
                     return (
                         <Fragment>
                             <div className={styles.postBlock}>
