@@ -9,7 +9,7 @@ const DialogItem = (props) => {
     let path = '/messages/'+props.id;
 
     return (
-        <div className={styles.dialog}>
+        <div className={styles.dialogsItems}>
             <NavLink to={path} className = { activeLinkCheck }> {props.name} </NavLink>
         </div>
     )
