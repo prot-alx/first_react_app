@@ -1,0 +1,23 @@
+.sendMessage {   
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.sendMessage textarea {
+    display: block;
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    resize: none;
+    border: 0px solid rgb(0, 0, 0);
+}
+
+.sendMessage button {
+    display: block;
+    font-size: 16px;
+}
