@@ -36,10 +36,12 @@ const profileReducer = (state = initialState, action) => {
 }
 
 export const addPostActionCreator = () => {
+    console.log('ADD POST ACTION CREATOR');
     return {type : ADD_POST}
 }
 
 export const updatePostActionCreator = (text) => {
+    console.log('UPDATE POST ACTION CREATOR');
     return {type : UPDATE_NEW_POST_TEXT, newText : text}
 }
 

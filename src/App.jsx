@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
-import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import ProfileContainer from './components/Profile/ProfileContainer';
+//import Dialogs from './components/Dialogs/Dialogs';
 import Footer from './components/Footer/Footer';
 import Help from './components/Help/Help';
 import Music from './components/Music/Music';
@@ -19,9 +19,9 @@ const App = () => {
         <SidebarContainer />
         <div className={styles.appWrapperContent}>
           <Routes>            
-            {/* <Route path='*' element={<Navigate replace to='/profile'/>}/>
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/messages/*' element={<Dialogs />} /> */}
+            <Route path='*' element={<Navigate replace to='/profile'/>}/>
+            <Route path='/profile' element={<ProfileContainer />} />
+            {/* <Route path='/messages/*' element={<Dialogs />} /> */}
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />            
