@@ -1,33 +1,32 @@
 import React from "react";
 import { updateNewMessageTextActionCreator, addMessageActionCreator } from "../../../redux/dialogsReducer";
-import StoreContext from '../../../StoreContext';
+//import StoreContext from '../../../StoreContext';
 import SendMessageBlock from "./SendMessageBlock";
 
 const SendMessageBlockContainer = (props) => {
-    return (
-        <StoreContext.Consumer>
-            {
-                (store) => {
-                    let state = props.store.getState();
+    // return (
+    //     <StoreContext.Consumer>
+    //         {
+    //             (store) => {
+                    
+    //                 let addMessage = () => {
+    //                     store.dispatch(addMessageActionCreator());
+    //                 };
 
-                    let changeMessageText = (text) => {
-                        props.store.dispatch(updateNewMessageTextActionCreator(text));
-                    };
+    //                 let changeMessageText = (text) => {
+    //                     store.dispatch(updateNewMessageTextActionCreator(text));
+    //                 };
 
-                    let addMessage = () => {
-                        props.store.dispatch(addMessageActionCreator());
-                    };
-
-                    return (
-                        <SendMessageBlock
-                            addMessage={addMessage}
-                            changeMessageText={changeMessageText}
-                            newMessageText={state.dialogsPage.newMessageText} />
-                    );
-                }
-            }
-        </StoreContext.Consumer >
-    )
+    //                 return (
+    //                     <SendMessageBlock
+    //                         addMessage={addMessage}
+    //                         changeMessageText={changeMessageText}
+    //                         newMessageText={store.getState().dialogsPage.newMessageText} />
+    //                 );
+    //             }
+    //         }
+    //     </StoreContext.Consumer >
+    // )
 }
 
 export default SendMessageBlockContainer;
