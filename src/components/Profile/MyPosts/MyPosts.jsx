@@ -4,21 +4,20 @@ import Post from '../MyPosts/Post/Post';
 import { ModalWindow } from './ModalText';
 
 
-const MyPosts = (props) => {
-
-    console.log(props);
+const MyPosts = (props) => {    
 
     let state = props.props;
 
+    console.log(state, 'MYPOSTS');
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    let postsElements = state.postsData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} id={post.id} />);
+    let postsElements = state.profilePage.postsData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} id={post.id} />);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        console.log('addpost clicked', state.newPostText)
-        state.newPostText === '' ? alert('Enter some text') : state.addPostActionCreator();
+        state.profilePage.newPostText === '' ? alert('Enter some text') : state.addPostActionCreator();
     };
 
     let sendPostOnEnter = (e) => { if (e.key === "Enter") addPost() };
@@ -26,7 +25,7 @@ const MyPosts = (props) => {
     let onPostChange = () => {
         let text = newPostElement.current.value;
         console.log(text)
-        state.updatePostActionCreator();
+        state.updatePostActionCreator(text);
     }
 
     return (
@@ -35,7 +34,7 @@ const MyPosts = (props) => {
                 <h3>My posts</h3>
                 <div>
                     <div className={styles.textWrapper}>
-                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} onKeyUp={sendPostOnEnter} />
+                        <textarea onChange={onPostChange} ref={newPostElement} value={state.profilePage.newPostText} onKeyUp={sendPostOnEnter} />
                     </div>
                     <div>
                         <button onClick={addPost}>Send</button>

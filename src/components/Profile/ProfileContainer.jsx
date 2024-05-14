@@ -3,9 +3,8 @@ import Profile from './Profile';
 import { addPostActionCreator, updatePostActionCreator } from '../../redux/profileReducer';
 
 let mapStateToProps = (state)=> {
-    return {
-        newPostText: state.profilePage.newPostText,
-        postsData: state.profilePage.postsData,
+    return {        
+        profilePage: state.profilePage,
   }
 }
 
