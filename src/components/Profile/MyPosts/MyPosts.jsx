@@ -7,7 +7,7 @@ import { ModalWindow } from './ModalText';
 const MyPosts = (props) => {
 
     console.log(props);
-    
+
     let state = props.props;
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -17,6 +17,7 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        console.log('addpost clicked', state.newPostText)
         state.newPostText === '' ? alert('Enter some text') : state.addPostActionCreator();
     };
 

@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
-//import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Footer from './components/Footer/Footer';
 import Help from './components/Help/Help';
 import Music from './components/Music/Music';
@@ -21,7 +21,7 @@ const App = () => {
           <Routes>            
             <Route path='*' element={<Navigate replace to='/profile'/>}/>
             <Route path='/profile' element={<ProfileContainer />} />
-            {/* <Route path='/messages/*' element={<Dialogs />} /> */}
+            <Route path='/messages/*' element={<DialogsContainer />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
             <Route path='/Help' element={<Help />} />            
