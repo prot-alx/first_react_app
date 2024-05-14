@@ -1,0 +1,134 @@
+.userStatuses {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.userStatus {
+    border: 1px solid rgb(0, 58, 85);;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.block1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.block2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.location {
+    width: 150px;
+}
+
+.userPhoto {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.userName {
+    font-size: 20px;
+}
+
+.userStatusText {
+    color: #575757;
+}
+.location {
+    font-size: 20px;
+    color: #575757;
+}
+
+button {
+    width: 100px;
+    appearance: none;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.followButton {
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+}
+
+button:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+.followButton:hover {
+    background-color: #2c974b;
+}
+
+.followButton:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+}
+
+.followButton:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.followButton:active {
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.unfollowButton {
+    background-color: #a42e2e;
+    border: 1px solid rgba(27, 31, 35, .15);
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+}
+
+.unfollowButton:hover {
+    background-color: #972c2c;
+}
+
+.unfollowButton:focus {
+    box-shadow: rgba(164, 46, 46, 0.4) 0 0 0 3px;
+    outline: none;
+}
+
+.unfollowButton:disabled {
+    background-color: #d39494;
+    border-color: rgba(35, 27, 27, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    cursor: default;
+}
+
+.unfollowButton:active {
+    background-color: #8e2929;
+    box-shadow: rgba(70, 20, 20, 0.2) 0 1px 0 inset;
+}

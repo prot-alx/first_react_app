@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 import Footer from './components/Footer/Footer';
 import Help from './components/Help/Help';
 import Music from './components/Music/Music';
@@ -21,6 +22,7 @@ const App = () => {
           <Routes>            
             <Route path='*' element={<Navigate replace to='/profile'/>}/>
             <Route path='/profile' element={<ProfileContainer />} />
+            <Route path='/users' element={<UsersContainer />} />
             <Route path='/messages/*' element={<DialogsContainer />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
