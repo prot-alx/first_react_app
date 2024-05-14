@@ -8,8 +8,6 @@ const MyPosts = (props) => {
 
     let state = props.props;
 
-    console.log(state, 'MYPOSTS');
-
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     let postsElements = state.profilePage.postsData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} id={post.id} />);
@@ -17,14 +15,13 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        state.profilePage.newPostText === '' ? alert('Enter some text') : state.addPostActionCreator();
+        state.addPostActionCreator();
     };
 
     let sendPostOnEnter = (e) => { if (e.key === "Enter") addPost() };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        console.log(text)
         state.updatePostActionCreator(text);
     }
 
@@ -34,7 +31,11 @@ const MyPosts = (props) => {
                 <h3>My posts</h3>
                 <div>
                     <div className={styles.textWrapper}>
-                        <textarea onChange={onPostChange} ref={newPostElement} value={state.profilePage.newPostText} onKeyUp={sendPostOnEnter} />
+                        <textarea 
+                        onChange={onPostChange} 
+                        ref={newPostElement} 
+                        value={state.profilePage.newPostText} 
+                        onKeyUp={sendPostOnEnter} />
                     </div>
                     <div>
                         <button onClick={addPost}>Send</button>

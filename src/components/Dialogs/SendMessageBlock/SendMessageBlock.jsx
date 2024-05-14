@@ -4,18 +4,16 @@ import styles from './SendMessageBlock.module.css';
 const SendMessageBlockContainer = (props) => {
     let state = props.props;
 
-    console.log(state);
-
     let newMessageElement = React.createRef();
+    
+    let sendMessage = () => {
+        state.addMessageActionCreator();
+    }
 
     let onMessageChange = () => {
         let text = newMessageElement.current.value;
         state.updateNewMessageTextActionCreator(text);
     };
-
-    let sendMessage = () => {
-        state.addMessageActionCreator();
-    }
 
     let sendMsgOnEnter = (e) => { if (e.key === "Enter") sendMessage() };
 
@@ -25,7 +23,7 @@ const SendMessageBlockContainer = (props) => {
                 ref={newMessageElement}
                 onChange={onMessageChange}
                 onKeyUp={sendMsgOnEnter}
-                value={state.newMessageText} />
+                value={state.dialogsPage.newMessageText} />
         <button onClick={sendMessage}>Send</button>
     </div>
     );

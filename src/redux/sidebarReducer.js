@@ -13,7 +13,7 @@ let initialState = [
 const sidebarReducer = (state = initialState, action) => {
     switch(action.type) {
         case DO_NOTHING:
-            console.log('TEST')
+            //console.log('Sidebar clicked. Action +')
             return state;
         default:
             return state;

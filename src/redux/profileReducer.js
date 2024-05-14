@@ -1,9 +1,7 @@
 import {v1} from 'uuid';
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'; 
-
-
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {            
     postsData: [
@@ -13,35 +11,39 @@ let initialState = {
         { id: 4, message: '!!!!!223213', likesCount: 2, }, 
         { id: 5, message: '&&&^^^^!!!!222', likesCount: 5, }
     ],
-    newPostText: ''  
+
+    newPostText: '',
 };
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
+            let stateCopy = {...state};
             let newPost = {
                 id: v1(),
-                message: state.newPostText,
+                message: stateCopy.newPostText,
                 likesCount: 0
-            };
-            state.postsData.push(newPost);
-            state.newPostText = '';
-            return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            };            
+            stateCopy.postsData = [...state.postsData]
+            stateCopy.postsData.push(newPost);
+            stateCopy.newPostText = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_POST_TEXT:{
+            let stateCopy = {...state};
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }         
         default:
             return state;
     }
 }
 
 export const addPostActionCreator = () => {
-    console.log('ADD POST ACTION CREATOR');
     return {type : ADD_POST}
 }
 
 export const updatePostActionCreator = (text) => {
-    console.log('UPDATE POST ACTION CREATOR');
     return {type : UPDATE_NEW_POST_TEXT, newText : text}
 }
 
