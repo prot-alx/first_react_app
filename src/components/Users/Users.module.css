@@ -46,12 +46,13 @@
 .userStatusText {
     color: #575757;
 }
+
 .location {
     font-size: 20px;
     color: #575757;
 }
 
-button {
+.fButton {
     width: 100px;
     appearance: none;
     box-sizing: border-box;
@@ -131,4 +132,9 @@ button:focus:not(:focus-visible):not(.focus-visible) {
 .unfollowButton:active {
     background-color: #8e2929;
     box-shadow: rgba(70, 20, 20, 0.2) 0 1px 0 inset;
+}
+
+.getusersButton {
+    color: black;
+    width: 100px;
 }
