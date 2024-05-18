@@ -30,11 +30,13 @@ class Users extends React.Component {
             pages.push(i);
         }
 
+        //pages scroll
         let curP = this.props.currentPage;
         let curPF = ((curP - this.props.pageSize) < 0) ? 0 : curP - this.props.pageSize;
         let curPL = curP + this.props.pageSize;
         let slicedPages = pages.slice(curPF, curPL);
-
+        //pages scroll
+        
         return (
             <div>
                 <div className={styles.pagesList}>
