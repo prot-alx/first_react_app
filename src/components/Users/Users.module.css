@@ -1,7 +1,7 @@
 .userStatuses {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;    
 }
 
 .userStatus {
@@ -9,6 +9,28 @@
     border-radius: 10px;
     padding: 10px;
     display: flex;
+    gap:10px;
+}
+
+.pagesList {
+    display: flex;
+    gap: 5px;   
+    text-align: center;
+}
+.selectedPage:hover, .nonselectedPage:hover {
+    transform: scale(1.05);
+}
+.selectedPage{    
+    width: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nonselectedPage {
+    width: 40px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .block1 {
