@@ -27,7 +27,7 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newPostText : action.newText,
-            };               
+            };
         default:
             return state;
     }

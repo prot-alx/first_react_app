@@ -3,26 +3,23 @@ import styles from './MyPosts.module.css';
 import Post from '../MyPosts/Post/Post';
 import { ModalWindow } from './ModalText';
 
-
 const MyPosts = (props) => {    
-
-    let state = props.props;
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    let postsElements = state.profilePage.postsData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} id={post.id} />);
+    let postsElements = props.profilePage.postsData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} id={post.id} />);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        state.addPostActionCreator();
+        props.addPostActionCreator();
     };
 
     let sendPostOnEnter = (e) => { if (e.key === "Enter") addPost() };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        state.updatePostActionCreator(text);
+        props.updatePostActionCreator(text);
     }
 
     return (
@@ -34,7 +31,7 @@ const MyPosts = (props) => {
                         <textarea 
                         onChange={onPostChange} 
                         ref={newPostElement} 
-                        value={state.profilePage.newPostText} 
+                        value={props.profilePage.newPostText} 
                         onKeyUp={sendPostOnEnter} />
                     </div>
                     <div>

@@ -2,7 +2,8 @@ import React from "react";
 import userPhoto from '../../img/4c37ee25c50fe7f61ddc8858b0298042.jpg';
 import styles from './Users.module.css';
 
-let Users = (props) => {
+let Users = (props) => {    
+    console.log(props)
     
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 

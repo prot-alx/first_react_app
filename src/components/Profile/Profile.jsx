@@ -3,11 +3,14 @@ import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
-    return (        
+    console.log(props)
+    return (
         <Fragment>
-            <ProfileInfo />            
-            <MyPosts props={props}/> 
-        </Fragment> 
+            <ProfileInfo />
+            <MyPosts profilePage={props.profilePage}
+                addPostActionCreator={props.addPostActionCreator}
+                updatePostActionCreator={props.updatePostActionCreator}/>
+        </Fragment>
     )
 }
 

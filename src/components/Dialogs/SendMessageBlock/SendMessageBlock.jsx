@@ -29,6 +29,4 @@ const SendMessageBlockContainer = (props) => {
     );
 }
 
-
-
 export default SendMessageBlockContainer;

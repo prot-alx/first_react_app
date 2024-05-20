@@ -1,5 +1,3 @@
-//import {v1} from 'uuid';
-
 const DO_NOTHING = 'DO-NOTHING'
 
 let initialState = [ 
