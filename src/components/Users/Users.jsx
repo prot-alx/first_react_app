@@ -21,36 +21,39 @@ let Users = (props) => {
     //pages scroll
 
     return (
-        <div>
-            <div className={styles.pagesList}>
-                {slicedPages.map(p =>
-                    <span onClick={() => { props.onPageChanged(p) }} key={p} className={props.currentPage === p ? styles.selectedPage : styles.nonselectedPage}>{p}</span>
-                )}
+        <div>            
+            <div className={styles.pagesList}>     
+                <div className={`${props.currentPage === 1 ? styles.selectedPage : styles.nonselectedPage} ${styles.firstNlastPage}`} onClick={() => { props.onPageChanged(1) }}>First page</div>
+                <div className={styles.pageNumbers}>   
+                    {slicedPages.map(p =>
+                        <span onClick={() => { props.onPageChanged(p) }} key={p} className={props.currentPage === p ? styles.selectedPage : styles.nonselectedPage}>{p}</span>
+                    )}
+                </div>      
+                <div className={`${props.currentPage === pagesCount ? styles.selectedPage : styles.nonselectedPage} ${styles.firstNlastPage}`} onClick={() => { props.onPageChanged(pagesCount) }}>Last page</div>
             </div>
             <div className={styles.userStatuses}>
-                {props.users.map(u =>
-                    <div key={u.id} className={styles.userStatus}>
-                        <span className={styles.block1}>
-                            <div>
-                                <img className={styles.userPhoto} src={u.photos.small != null ? u.photos.small : userPhoto} alt='user ava' />
-                            </div>
-                            <div>
-                                {u.followed
-                                    ? <button className={`${styles.unfollowButton} ${styles.fButton}`} onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-                                    : <button className={`${styles.followButton} ${styles.fButton}`} onClick={() => { props.follow(u.id) }}>Follow</button>}
-                            </div>
+                {props.users.map(u => <div key={u.id} className={styles.userStatus}>                   
+                    <span className={styles.block1}>
+                        <div>
+                            <img className={styles.userPhoto} src={u.photos.small != null ? u.photos.small : userPhoto} alt='user ava' />
+                        </div>
+                        <div>
+                            {u.followed
+                                ? <button className={`${styles.unfollowButton} ${styles.fButton}`} onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
+                                : <button className={`${styles.followButton} ${styles.fButton}`} onClick={() => { props.follow(u.id) }}>Follow</button>}
+                        </div>
+                    </span>
+                    <span className={styles.block2}>
+                        <span className={styles.userInfo}>
+                            <div className={styles.userName}>{u.name}:</div>
+                            <div className={styles.userStatusText}>{u.status != null ? u.status : 'some status text'}</div>
                         </span>
-                        <span className={styles.block2}>
-                            <span className={styles.userInfo}>
-                                <div className={styles.userName}>{u.name}:</div>
-                                <div className={styles.userStatusText}>{u.status != null ? u.status : 'some status text'}</div>
-                            </span>
-                            <span className={styles.location}>
-                                <div className={styles.userCountry}>{'u.location.country'},</div>
-                                <div className={styles.userCity}>{'u.location.city'}</div>
-                            </span>
+                        <span className={styles.location}>
+                            <div className={styles.userCountry}>{'u.location.country'},</div>
+                            <div className={styles.userCity}>{'u.location.city'}</div>
                         </span>
-                    </div>)}
+                    </span>
+                </div>)}
             </div>
         </div>
     )
