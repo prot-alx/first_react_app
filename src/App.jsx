@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -19,9 +19,8 @@ const App = () => {
         <Header />
         <SidebarContainer />
         <div className={styles.appWrapperContent}>
-          <Routes>            
-            <Route path='*' element={<Navigate replace to='/profile'/>}/>
-            <Route path='/profile' element={<ProfileContainer />} />
+          <Routes>
+            <Route path='/profile/*' element={<ProfileContainer />} />
             <Route path='/users' element={<UsersContainer />} />
             <Route path='/messages/*' element={<DialogsContainer />} />
             <Route path='/Music' element={<Music />} />

@@ -1,13 +1,29 @@
 import { connect } from 'react-redux';
+import { addPostActionCreator, updatePostActionCreator, setUserProfile } from '../../redux/profileReducer';
+import React from 'react';
 import Profile from './Profile';
-import { addPostActionCreator, updatePostActionCreator } from '../../redux/profileReducer';
+import axios from "axios";
 
-let mapStateToProps = (state)=> {
-    return {        
-        profilePage: state.profilePage,
+
+class ProfileContainer extends React.Component {
+  componentDidMount() {
+    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
+        .then(response => {
+          this.props.setUserProfile(response.data);
+        });
+  }
+
+  render() {
+    return (
+      <Profile profile={this.props.profile}/>
+    )
   }
 }
 
-const ProfileContainer = connect(mapStateToProps, {addPostActionCreator, updatePostActionCreator})(Profile);
+let mapStateToProps = (state) => {
+  return {
+    profile: state.profilePage.profile
+  }
+}
 
-export default ProfileContainer;
+export default connect(mapStateToProps, {setUserProfile, updatePostActionCreator, addPostActionCreator})(ProfileContainer);
