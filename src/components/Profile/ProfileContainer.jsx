@@ -3,22 +3,35 @@ import { addPostActionCreator, updatePostActionCreator, setUserProfile } from '.
 import React from 'react';
 import Profile from './Profile';
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
+export function withRouter(Children) {
+  return (props) => {
 
-class ProfileContainer extends React.Component {
+    const match = { params: useParams() };
+
+    return <Children {...props} match={match} />
+
+  }
+}
+
+class ProfileContainer extends React.Component {  
   componentDidMount() {
-    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
-        .then(response => {
-          this.props.setUserProfile(response.data);
-        });
+    let userId = this.props.match.params.userId;
+    if (!userId) {userId = 2;};
+    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
+      .then(response => {
+        this.props.setUserProfile(response.data);
+      });
   }
 
   render() {
     return (
-      <Profile profile={this.props.profile}/>
+      <Profile profile={this.props.profile} />
     )
   }
 }
+
 
 let mapStateToProps = (state) => {
   return {
@@ -26,4 +39,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {setUserProfile, updatePostActionCreator, addPostActionCreator})(ProfileContainer);
+export default connect(mapStateToProps, { setUserProfile, updatePostActionCreator, addPostActionCreator })(withRouter(ProfileContainer));

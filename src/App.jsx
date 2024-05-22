@@ -20,12 +20,14 @@ const App = () => {
         <SidebarContainer />
         <div className={styles.appWrapperContent}>
           <Routes>
-            <Route path='/profile/*' element={<ProfileContainer />} />
+            <Route path="/profile" element={<ProfileContainer />}>
+              <Route path=":userId" element={<ProfileContainer />} />
+            </Route>
             <Route path='/users' element={<UsersContainer />} />
             <Route path='/messages/*' element={<DialogsContainer />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Options' element={<Options />} />
-            <Route path='/Help' element={<Help />} />            
+            <Route path='/Help' element={<Help />} />
           </Routes>
         </div>
         <Footer />
