@@ -11,13 +11,17 @@
   "avatar info"  ;
   padding: 20px 0px;
   max-width: 100%;
+  grid-template-columns: 2fr 5fr;
 }
 
 .profileAvatar {
-  max-width: 150px;
+  max-width: 200px;
   grid-area: avatar;  
 }
 
+.profileAvatar img {
+  max-width: 100%;
+}
 .profileName {
   grid-area: name;
 }
@@ -27,6 +31,7 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
+  text-align: left;
 }
 
 .profileInfo div {
@@ -38,6 +43,8 @@
   font-weight: 700;
 }
 
-ul, li {
-  list-style-type:  none;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

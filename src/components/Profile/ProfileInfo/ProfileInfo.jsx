@@ -15,8 +15,8 @@ const ProfileInfo = (props) => {
                 <div className={styles.profileName}>
                     <h3>{props.profile.fullName}</h3>
                 </div>
-                <div>
-                    <img className={styles.profileAvatar} src={props.profile.photos.large ? props.profile.photos.large : avatarImage} alt="avatar" />
+                <div className={styles.profileAvatar} >
+                    <img src={props.profile.photos.large ? props.profile.photos.large : avatarImage} alt="avatar" />
                 </div>
                 <div className={styles.profileInfo}>
                     <ul>
