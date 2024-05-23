@@ -10,7 +10,7 @@
   "name name"
   "avatar info"  ;
   padding: 20px 0px;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .profileAvatar {
@@ -24,4 +24,20 @@
 
 .profileInfo {
   grid-area: info;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.profileInfo div {
+  display: inline-block;
+}
+
+.linksItem {
+  width: 150px;
+  font-weight: 700;
+}
+
+ul, li {
+  list-style-type:  none;
 }
