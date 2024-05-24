@@ -1,12 +1,23 @@
 .header {
-    grid-area: h;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-  }
-  
-  .header img {
-    max-width: 40px;
-    padding-left: 15px;
-  }
-  
+  grid-area: h;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  max-width: 40px;
+  padding-left: 15px;
+}
+
+.loginBlock a {
+  font-size: 20px;
+  padding-right: 15px;
+  color: rgb(0, 58, 85);
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
