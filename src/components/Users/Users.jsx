@@ -2,12 +2,8 @@ import React from "react";
 import userPhoto from '../../img/4c37ee25c50fe7f61ddc8858b0298042.jpg';
 import styles from './Users.module.css';
 import { NavLink } from "react-router-dom";
-import axios from "axios";
-
 
 let Users = (props) => {
-    let API_KEY = process.env.REACT_APP_API_KEY;
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
     let pages = [];
@@ -22,38 +18,6 @@ let Users = (props) => {
     let curPL = curP + props.pageSize;
     let slicedPages = pages.slice(curPF, curPL);
     //pages scroll
-
-    let unfollowUser = (id) => {
-        props.toggleFollowingProgress(true, id);
-        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": API_KEY,
-                                        }
-                                    })
-                                        .then(response => {
-                                            if (response.data.resultCode === 0) {
-                                                props.unfollow(id);
-                                            }
-                                            props.toggleFollowingProgress(false, id)
-                                        });
-    }
-
-    let followUser = (id) => {
-        props.toggleFollowingProgress(true, id);
-        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {}, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": API_KEY,
-                                        }
-                                    })
-                                        .then(response => {
-                                            if (response.data.resultCode === 0) {
-                                                props.follow(id);
-                                            }
-                                            props.toggleFollowingProgress(false, id);
-                                        });
-    }
 
     return (
         <div>
@@ -74,8 +38,14 @@ let Users = (props) => {
                         </div>
                         <div>
                             {u.followed
-                                ? <button className={`${styles.unfollowButton} ${styles.fButton}`} disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => { unfollowUser(u.id) }}>Unfollow</button>
-                                : <button className={`${styles.followButton} ${styles.fButton}`} disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => { followUser(u.id) }}>Follow</button>
+
+                                ? <button className={`${styles.unfollowButton} ${styles.fButton}`} 
+                                            disabled={props.followingInProgress.some(id => id === u.id)} 
+                                            onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
+
+                                : <button className={`${styles.followButton} ${styles.fButton}`} 
+                                            disabled={props.followingInProgress.some(id => id === u.id)} 
+                                            onClick={() => { props.follow(u.id) }}>Follow</button>
                             }
                         </div>
                     </span>
