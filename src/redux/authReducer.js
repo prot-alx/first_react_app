@@ -1,3 +1,5 @@
+import { authAPI } from "../api/api";
+
 const SET_USER_DATA = 'SET_USER_DATA';
 const HEADER_ISFETCHING = 'HEADER_ISFETCHING';
 
@@ -28,5 +30,18 @@ const authReducer = (state = initialState, action) => {
 export const setAuthUserData = (id, email, login) => ({ type: SET_USER_DATA, data: {id, email, login }});
 export const headerIsFetching = (isFetching) => ({type: HEADER_ISFETCHING, isFetching});
 
+export const authUserData = () => {
+    return (dispatch) => {
+        dispatch(headerIsFetching(true));
+        authAPI.authUserData()
+            .then(response => {
+                dispatch(headerIsFetching(false));
+                if (response.data.resultCode === 0) {
+                    let {id, email, login} = response.data.data;
+                    dispatch(setAuthUserData(id, email, login));
+                }
+            });    
+    }
+}
 
 export default authReducer;
