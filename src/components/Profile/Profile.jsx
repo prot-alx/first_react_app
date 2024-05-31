@@ -4,10 +4,12 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import Preloader from "../Preloader/Preloader";
 
 const Profile = (props) => {
+    console.log(props);
     if (!props.profile) return <Preloader />;
 
     return (
         <div>
+            {}
             <ProfileInfo profile={props.profile}/>
             {/* <MyPosts profilePage={props.profilePage}
                 addPostActionCreator={props.addPostActionCreator}

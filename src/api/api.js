@@ -8,11 +8,6 @@ const instance = axios.create({
     }
 })
 
-const authInstance = axios.create({
-    baseURL: 'https://social-network.samuraijs.com/api/1.0/auth/me',
-    withCredentials: true,
-})
-
 export const usersAPI = {
     async getUsers (currentPage = 1, pageSize = 10) {
         const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
@@ -30,6 +25,12 @@ export const usersAPI = {
 
 export const authAPI = {
     async authUserData () {
-        return await authInstance.get();
+        return await instance.get(`auth/me`);
+    }
+}
+
+export const profileAPI = {
+    async profileData (userId) {
+        return await instance.get(`profile/` + userId);
     }
 }

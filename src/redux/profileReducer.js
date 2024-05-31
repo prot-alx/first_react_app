@@ -1,8 +1,10 @@
 import {v1} from 'uuid';
+import { profileAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const TOGGLE_ISFETCHING = 'TOGGLE_ISFETCHING';
 
 let initialState = {            
     postsData: [
@@ -14,6 +16,7 @@ let initialState = {
     ],
     profile: null,
     newPostText: '',
+    isFetching: false,
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -34,15 +37,28 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 profile: action.profile
             }
+        case TOGGLE_ISFETCHING:
+            return { ...state, isFetching: action.isFetching };
         default:
             return state;
     }
 }
 
 export const addPostActionCreator = () => ({type : ADD_POST});
-
 export const updatePostActionCreator = (text) => ({type : UPDATE_NEW_POST_TEXT, newText : text});
-
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_ISFETCHING, isFetching });
+
+export const setUserProfileThunk = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true));
+        profileAPI.profileData(userId)
+            .then(response => {                    
+                dispatch(toggleIsFetching(false));
+                dispatch(setUserProfile(response.data));
+            }                
+        )
+    }
+}
 
 export default profileReducer;
