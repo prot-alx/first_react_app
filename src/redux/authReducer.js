@@ -30,7 +30,7 @@ const authReducer = (state = initialState, action) => {
 export const setAuthUserData = (id, email, login) => ({ type: SET_USER_DATA, data: {id, email, login }});
 export const headerIsFetching = (isFetching) => ({type: HEADER_ISFETCHING, isFetching});
 
-export const authUserData = () => {
+export const getAuthUserData = () => {
     return (dispatch) => {
         dispatch(headerIsFetching(true));
         authAPI.authUserData()

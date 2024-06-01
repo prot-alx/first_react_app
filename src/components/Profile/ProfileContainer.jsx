@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addPostActionCreator, updatePostActionCreator, setUserProfileThunk } from '../../redux/profileReducer';
+import { addPostActionCreator, updatePostActionCreator, getUserProfile } from '../../redux/profileReducer';
 import React from 'react';
 import Profile from './Profile';
 import { useParams } from 'react-router-dom';
@@ -16,7 +16,7 @@ class ProfileContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {userId = 2;};
-    this.props.setUserProfileThunk(userId);
+    this.props.getUserProfile(userId);
   }
 
   render() {
@@ -35,4 +35,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { updatePostActionCreator, addPostActionCreator, setUserProfileThunk })(withRouter(ProfileContainer));
+export default connect(mapStateToProps, { updatePostActionCreator, addPostActionCreator, getUserProfile })(withRouter(ProfileContainer));

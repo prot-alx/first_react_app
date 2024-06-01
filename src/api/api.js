@@ -30,7 +30,7 @@ export const authAPI = {
 }
 
 export const profileAPI = {
-    async profileData (userId) {
+    async getProfile (userId) {
         return await instance.get(`profile/` + userId);
     }
 }

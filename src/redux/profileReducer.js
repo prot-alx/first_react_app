@@ -49,10 +49,10 @@ export const updatePostActionCreator = (text) => ({type : UPDATE_NEW_POST_TEXT, 
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_ISFETCHING, isFetching });
 
-export const setUserProfileThunk = (userId) => {
+export const getUserProfile = (userId) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
-        profileAPI.profileData(userId)
+        profileAPI.getProfile(userId)
             .then(response => {                    
                 dispatch(toggleIsFetching(false));
                 dispatch(setUserProfile(response.data));
