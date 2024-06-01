@@ -4,6 +4,7 @@ import React from 'react';
 import Profile from './Profile';
 import { useParams } from 'react-router-dom';
 import Preloader from '../Preloader/Preloader'
+import { Navigate } from 'react-router-dom';
 
 export function withRouter(Children) {
   return (props) => {
@@ -20,6 +21,8 @@ class ProfileContainer extends React.Component {
   }
 
   render() {
+    if (this.props.isAuth === false) return <Navigate to="/login"/>;
+
     return (<>
       {this.props.isFetching ? <Preloader /> : null}
       <Profile profile={this.props.profile}/>
@@ -31,7 +34,8 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
-    isFetching: state.profilePage.isFetching,    
+    isFetching: state.profilePage.isFetching,  
+    isAuth: state.auth.isAuth,  
   }
 }
 

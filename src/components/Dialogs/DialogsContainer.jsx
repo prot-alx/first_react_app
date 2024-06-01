@@ -3,8 +3,9 @@ import Dialogs from './Dialogs'
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from '../../redux/dialogsReducer'
 
 let mapStateToProps = (state) => {
-    return {
+    return {        
         dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth,
     }
 }
 

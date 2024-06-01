@@ -10,6 +10,7 @@ import Help from './components/Help/Help';
 import Music from './components/Music/Music';
 import Options from './components/Options/Options';
 import styles from './App.module.css';
+import Login from "./components/Login/Login";
 
 
 const App = () => {
@@ -26,9 +27,10 @@ const App = () => {
             </Route>
             <Route path='/users' element={<UsersContainer />} />
             <Route path='/messages/*' element={<DialogsContainer />} />
-            <Route path='/Music' element={<Music />} />
-            <Route path='/Options' element={<Options />} />
-            <Route path='/Help' element={<Help />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/options' element={<Options />} />
+            <Route path='/help' element={<Help />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </div>
         <Footer />
